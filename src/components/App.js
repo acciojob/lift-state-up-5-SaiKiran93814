@@ -1,8 +1,6 @@
-
-import React from "react";
-import './../styles/App.css';
-
-import LoginForm from "./LoginForm";
+// App.js
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -12,14 +10,15 @@ function App() {
   };
 
   return (
-    <div className="p-4 text-center">
+    <div>
+      <h1>Parent Component</h1>
       {isLoggedIn ? (
-        <h2 className="text-green-600 text-2xl">Welcome! You are logged in.</h2>
+        <p>You are logged in!</p>
       ) : (
-        <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+        <LoginForm onLogin={handleLogin} />
       )}
     </div>
   );
 }
 
-export default App
+export default App;
